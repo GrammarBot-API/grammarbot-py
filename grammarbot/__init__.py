@@ -31,7 +31,7 @@ class GrammarBotClient:
         return GrammarBotApiResponse(json)
 
     def __repr__(self):
-        return 'GrammarBotClient(api_ket={})'.format(self._api_key)
+        return 'GrammarBotClient(api_key={})'.format(self._api_key)
 
 
 class GrammarBotMatch:
