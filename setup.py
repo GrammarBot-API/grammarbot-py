@@ -16,9 +16,10 @@ from setuptools import find_packages, setup, Command
 NAME = 'grammarbot'
 DESCRIPTION = 'Free open source grammar and spelling checker.'
 URL = 'https://github.com/grammarbot-api/grammarbot-py'
-EMAIL = 'meetmangukiya98@gmail.com'
+EMAIL = 'info@grammarbot.io'
 AUTHOR = 'Meet Mangukiya'
-REQUIRES_PYTHON = '>=3.6.0'
+# this is python requirements for requests library
+REQUIRES_PYTHON = '>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*'
 VERSION = None
 
 # What packages are required for this module to be executed?
@@ -118,9 +119,17 @@ setup(
         # Trove classifiers
         # Full list: https://pypi.python.org/pypi?%3Aaction=list_classifiers
         'License :: OSI Approved :: MIT License',
+        'Development Status :: 1 - Planning',
+        'Intended Audience :: Developers',
+        'Natural Language :: English',
         'Programming Language :: Python',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy'
     ],
