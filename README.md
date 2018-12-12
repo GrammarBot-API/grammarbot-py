@@ -73,3 +73,7 @@ res.message
 # object
 res.raw_json
 ```
+
+## API docs
+
+You can see the API documentation here: https://grammarbot-py.readthedocs.io/en/latest/
