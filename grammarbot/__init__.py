@@ -8,7 +8,7 @@ class GrammarBotClient:
     A GrammarBot-API wrapper client.
     """
 
-    def __init__(self, api_key: str):
+    def __init__(self, api_key: str='python-default'):
         self._api_key = api_key
         self._endpoint = 'http://api.grammarbot.io/v2/check'
 
