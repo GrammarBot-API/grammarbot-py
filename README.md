@@ -16,7 +16,7 @@ from grammarbot import GrammarBotClient
 
 # Creating the client
 # ===================
-client = GrammarBotClient('API_KEY')
+client = GrammarBotClient() # GrammarBotClient(api_key=python-default)
 
 # Analyzing the text
 # ==================
@@ -27,7 +27,7 @@ client = GrammarBotClient('API_KEY')
 text = 'I cant remember how to go their'
 
 # check the text, returns GrammarBotApiResponse object
-res = client.check(text)
+res = client.check(text) # GrammarBotApiResponse(matches=[GrammarBotMatch(offset=2, length=4, rule={'CANT'}, category={'TYPOS'}), GrammarBotMatch(offset=26, length=5, rule={'CONFUSION_RULE'}, category={'TYPOS'})])
 
 # Inspecting the GrammarBotApiResponse object
 # ===========================================
@@ -40,30 +40,33 @@ res.result_is_incomplete # False
 
 # see the suggestions / corrections suggested by the GrammarBot API
 # returns a list of GrammarBotMatch objects describing each replacement
-res.matches
+res.matches # [GrammarBotMatch(offset=2, length=4, rule={'CANT'}, category={'TYPOS'}), GrammarBotMatch(offset=26, length=5, rule={'CONFUSION_RULE'}, category={'TYPOS'})]
+
 
 # Inspecting the GrammarBotMatch object
 # =====================================
 
-match0 = match[0]
+match0 = match[0] # GrammarBotMatch(offset=2, length=4, rule={'CANT'}, category={'TYPOS'})
+
 
 # get replacement information
-res.replacement_offset
-res.replacement_length
+match0.replacement_offset # 2
+match0.replacement_length # 4
 
 # get suggested replacements
-res.replacements
+match0.replacements # ["can't", 'cannot']
 
 # get list of possible correct sentences after applying the replacements
-res.corrections
+match0.corrections # ["I can't remember how to go their", 'I cannot remember how to go their']
+
 
 # get the rules, type and category information of the match
-res.rule
-res.category
-res.type
+match0.rule # 'CANT'
+match0.category # 'TYPOS'
+match0.type # 'Other'
 
 # getting a friendly message regarding the replacement suggestion
-res.message
+match0.message # 'Did you mean "can\'t" or "cannot"?'
 
 # Getting even more information
 # =============================
