@@ -1,5 +1,9 @@
 # grammarbot-py
 
+Grammar Bot provides spelling and grammar check. Signup for an API key at
+https://www.grammarbot.io/ for increased usage limits. The API still works
+with no key, but the daily usage limit is lower.
+
 ## Installation
 
 ```sh
@@ -16,7 +20,10 @@ from grammarbot import GrammarBotClient
 
 # Creating the client
 # ===================
-client = GrammarBotClient() # GrammarBotClient(api_key=python-default)
+client = GrammarBotClient()
+
+# or, signup for an API Key to get higher usage limits here: https://www.grammarbot.io/
+client = GrammarBotClient(api_key='my_api_key_here') # GrammarBotClient(api_key=my_api_key_here)
 
 # you can even set the base URI to a different server
 client = GrammarBotClient(base_uri='http://backup.grammarbot.io:80')
