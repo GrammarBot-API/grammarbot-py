@@ -1,4 +1,5 @@
 from typing import List
+from urllib.parse import urljoin
 
 import requests
 
@@ -8,9 +9,10 @@ class GrammarBotClient:
     A GrammarBot-API wrapper client.
     """
 
-    def __init__(self, api_key: str='python-default'):
+    def __init__(self, base_uri: str='http://api.grammarbot.io/', api_key: str='python-default'):
         self._api_key = api_key
-        self._endpoint = 'http://api.grammarbot.io/v2/check'
+        self._base_uri = base_uri
+        self._endpoint = urljoin(base_uri, '/v2/check')
 
     def check(self, text: str, lang: str='en-US'):
         """
@@ -31,7 +33,8 @@ class GrammarBotClient:
         return GrammarBotApiResponse(json)
 
     def __repr__(self):
-        return 'GrammarBotClient(api_key={})'.format(self._api_key)
+        return 'GrammarBotClient(base_uri={}, api_key={})'.format(
+            self._base_uri, self._api_key)
 
 
 class GrammarBotMatch:

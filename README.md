@@ -18,6 +18,9 @@ from grammarbot import GrammarBotClient
 # ===================
 client = GrammarBotClient() # GrammarBotClient(api_key=python-default)
 
+# you can even set the base URI to a different server
+client = GrammarBotClient(base_uri='http://backup.grammarbot.io:80')
+
 # Analyzing the text
 # ==================
 
