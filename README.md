@@ -39,6 +39,9 @@ text = 'I cant remember how to go their'
 # check the text, returns GrammarBotApiResponse object
 res = client.check(text) # GrammarBotApiResponse(matches=[GrammarBotMatch(offset=2, length=4, rule={'CANT'}, category={'TYPOS'}), GrammarBotMatch(offset=26, length=5, rule={'CONFUSION_RULE'}, category={'TYPOS'})])
 
+# you can even specify the language of input text
+res = client.check(text, 'en-GB')
+
 # Inspecting the GrammarBotApiResponse object
 # ===========================================
 
