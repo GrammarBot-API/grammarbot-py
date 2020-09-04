@@ -60,6 +60,13 @@ class GrammarBotMatch:
         return self._match_json["rule"]["category"]["id"]
 
     @property
+    def category(self) -> str:
+        """
+        Returns the sentence the match is referring to.
+        """
+        return self._match_json["sentence"]
+
+    @property
     def replacement_offset(self) -> int:
         """
         Gives the offset at which the replacement should be made.
